@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:future_jobs/models/category_model.dart';
 import 'package:future_jobs/pages/category_page.dart';
 
 import '../theme.dart';
 
 class CategoryCard extends StatelessWidget {
-  final String name;
-  final String imageUrl;
+  // final String name;
+  // final String imageUrl;
+  //diubah menjadi
+  final CategoryModel category;
 
-  CategoryCard({this.imageUrl, this.name});
+  CategoryCard(this.category);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +20,9 @@ class CategoryCard extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => CategoryPage(
-              name: name,
-              imageUrl: imageUrl,
+              // name: category.name,
+              // imageUrl: category.imageUrl,
+              category
             ),
           ),
         );
@@ -31,14 +35,14 @@ class CategoryCard extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-              imageUrl,
+              category.imageUrl,
             ),
           ),
         ),
         child: Align(
           alignment: Alignment.bottomLeft,
           child: Text(
-            name,
+            category.name,
             style: whiteTextStyle.copyWith(
               fontSize: 18,
               fontWeight: medium,

@@ -6,6 +6,7 @@ import 'package:future_jobs/pages/sign_up_page.dart';
 import 'package:future_jobs/pages/splash_page.dart';
 import 'package:future_jobs/providers/auth_provider.dart';
 import 'package:future_jobs/providers/category_provider.dart';
+import 'package:future_jobs/providers/job_provider.dart';
 import 'package:future_jobs/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<AuthProvider>(create: (context) => AuthProvider()),
         ChangeNotifierProvider<UserProvider>(create: (context) => UserProvider()),
-        ChangeNotifierProvider<CategoryProvider>(create: (context) => CategoryProvider())
+        ChangeNotifierProvider<CategoryProvider>(create: (context) => CategoryProvider()),
+        ChangeNotifierProvider<JobProvider>(create: (context) => JobProvider())
       ], child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
